@@ -5,6 +5,7 @@ var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 var MpvuePlugin = require('webpack-mpvue-asset-plugin')
 var glob = require('glob')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -61,9 +62,7 @@ module.exports = {
           'babel-loader',
           {
             loader: 'mpvue-loader',
-            options: {
-              checkMPEntry: true
-            }
+            options: Object.assign({checkMPEntry: true}, vueLoaderConfig)
           },
         ]
       },
@@ -94,6 +93,19 @@ module.exports = {
     ]
   },
   plugins: [
-    new MpvuePlugin()
+    new MpvuePlugin(),
+    new CopyWebpackPlugin([{
+      from: '**/*.json',
+      to: ''
+    }], {
+      context: 'src/'
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../static'),
+        to: path.resolve(config.build.assetsRoot, './static'),
+        ignore: ['.*']
+      }
+    ])
   ]
 }

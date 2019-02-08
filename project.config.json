@@ -7,10 +7,10 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"miniprogramRoot": "./dist/",
-	"qcloudRoot": "./server/",
+	"miniprogramRoot": "dist/wx/",
+	"qcloudRoot": "server/",
 	"compileType": "miniprogram",
-	"appid": "wx601ce71bde7b9add",
+	"appid": "wx1b81813387a46381",
 	"projectname": "mpvue-shop",
 	"libVersion": "2.2.4",
 	"condition": {
