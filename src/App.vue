@@ -3,7 +3,14 @@
 //   getOpenid
 // } from './utils'
 export default {
+
+   // 捕获 app error
+   onError (err) {
+     console.log('onerror')
+       console.log(err)
+   },
   created() {
+    console.log('created')
     // 调用API从本地缓存中获取数据
     const logs = wx.getStorageSync("logs") || [];
     logs.unshift(Date.now());

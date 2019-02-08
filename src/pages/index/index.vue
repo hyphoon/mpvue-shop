@@ -159,6 +159,7 @@ export default {
           if (!res.authSetting["scope.userLocation"]) {
             wx.openSetting({
               success: res => {
+                console.log(this)
                 _this.getCityName();
               }
             });
@@ -235,7 +236,7 @@ export default {
       });
     },
     totopic() {
-      wx.navigateTo({
+      wx.switchTab({
         url: "/pages/topic/main"
       });
     },
