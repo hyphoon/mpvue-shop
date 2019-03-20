@@ -144,7 +144,7 @@ export default {
   onShow() {
   },
   mounted() {
-    //判断是否登录获取用户信息
+    // 判断是否登录获取用户信息
     if (login()) {
       this.userInfo = login();
     }
@@ -155,7 +155,7 @@ export default {
     this.openId = getStorageOpenid();
     this.goodsDetail();
   },
-  //商品转发
+  // 商品转发
   onShareAppMessage() {
     console.log(this.info.name);
     console.log(this.info.id);
@@ -164,7 +164,7 @@ export default {
     return {
       title: this.info.name,
       path: "/pages/goods/main?id=" + this.info.id,
-      imageUrl: this.gallery[0].img_url //拿第一张商品的图片
+      imageUrl: this.gallery[0].img_url // 拿第一张商品的图片
     };
   },
   data() {
@@ -207,12 +207,12 @@ export default {
     async bug() {
       if (toLogin()) {
         if (this.showpop) {
-          if (this.number == 0) {
+          if (this.number === 0) {
             wx.showToast({
-              title: "请选择商品数量", //提示的内容,
-              duration: 2000, //延迟时间,
+              title: "请选择商品数量", // 提示的内容,
+              duration: 2000, // 延迟时间,
               icon: "none",
-              mask: true, //显示透明蒙层，防止触摸穿透,
+              mask: true, // 显示透明蒙层，防止触摸穿透,
               success: res => { }
             });
             return false;
@@ -242,17 +242,18 @@ export default {
           openId: this.userInfo.openId,
           goodsId: this.goodsId
         });
+        console.log(data);
       }
     },
     async addCart() {
       if (toLogin()) {
         if (this.showpop) {
-          if (this.number == 0) {
+          if (this.number === 0) {
             wx.showToast({
-              title: "请选择商品数量", //提示的内容,
-              duration: 2000, //延迟时间,
+              title: "请选择商品数量", // 提示的内容,
+              duration: 2000, // 延迟时间,
               icon: "none",
-              mask: true, //显示透明蒙层，防止触摸穿透,
+              mask: true, // 显示透明蒙层，防止触摸穿透,
               success: res => { }
             });
             return false;
@@ -262,7 +263,7 @@ export default {
             goodsId: this.goodsId,
             number: this.number
           });
-          //添加成功后
+          // 添加成功后
           if (data) {
             this.allnumber = this.allnumber + this.number;
             wx.showToast({

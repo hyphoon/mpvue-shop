@@ -17,7 +17,7 @@ export default {
   onPullDownRefresh() {
     this.page = 1;
     this.getData(true);
-    //刷新完成后关闭
+    // 刷新完成后关闭
     wx.stopPullDownRefresh();
   },
   onReachBottom() {

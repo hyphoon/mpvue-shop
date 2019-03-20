@@ -55,7 +55,7 @@ export default {
       wx.setStorageSync("addressId", id);
       // wx.redirectTo({ url: "/pages/order/main?id=" + id });
       wx.navigateBack({
-        delta: 1 //返回的页面数，如果 delta 大于现有页面数，则返回到首页,
+        delta: 1 // 返回的页面数，如果 delta 大于现有页面数，则返回到首页,
       });
     },
     toDetail(id) {
@@ -77,16 +77,16 @@ export default {
       console.log(this.listData);
     },
     wxaddress(index) {
-      if (index == 1) {
+      if (index === 1) {
         wx.navigateTo({
           url: "/pages/addaddress/main"
         });
       } else {
         wx.chooseAddress({
           success: function(res) {
-            var res = encodeURIComponent(JSON.stringify(res));
+            var resEncode = encodeURIComponent(JSON.stringify(res));
             wx.navigateTo({
-              url: "/pages/addaddress/main?res=" + res
+              url: "/pages/addaddress/main?res=" + resEncode
             });
           }
         });

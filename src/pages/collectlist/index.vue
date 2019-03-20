@@ -46,11 +46,10 @@
         wx.navigateTo({
           url: "/pages/goods/main?id=" + id
         });
-      },
+      }
     },
     computed: {}
   };
-
 </script>
 <style lang='scss' scoped>
   @import "./style";

@@ -17,12 +17,10 @@ import store from './store'
 export default {
   created () {
     // console.log(this.$root.$mp.query);
-    
+
   },
   mounted() {
     console.log(this.$root.$mp.query);
-
-    
   },
   computed: {
     count () {

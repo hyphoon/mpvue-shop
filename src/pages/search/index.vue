@@ -92,7 +92,7 @@ export default {
     },
     cancel() {
       wx.navigateBack({
-        delta: 1 //返回的页面数，如果 delta 大于现有页面数，则返回到首页,
+        delta: 1 // 返回的页面数，如果 delta 大于现有页面数，则返回到首页,
       });
     },
     clearInput() {
@@ -101,13 +101,13 @@ export default {
       this.tipsData = [];
     },
     inputFocus() {
-      //商品清空
+      // 商品清空
       this.listData = [];
-      //展示搜索提示信息
+      // 展示搜索提示信息
       this.tipsearch();
     },
     async getlistData() {
-      //获取商品列表
+      // 获取商品列表
       const data = await get("/search/helperaction", {
         keyword: this.words,
         order: this.order
@@ -117,8 +117,8 @@ export default {
     },
     changeTab(index) {
       this.nowIndex = index;
-      if (index == 1) {
-        this.order = this.order == "asc" ? "desc" : "asc";
+      if (index === 1) {
+        this.order = this.order === "asc" ? "desc" : "asc";
       } else {
         this.order = "";
       }
@@ -141,9 +141,9 @@ export default {
         keyword: vaule || this.words
       });
       console.log(data);
-      //获取历史数据
+      // 获取历史数据
       this.getHotData();
-      //获取商品列表
+      // 获取商品列表
       this.getlistData();
     },
     async getHotData(first) {
@@ -165,7 +165,6 @@ export default {
   },
   computed: {}
 };
-
 </script>
 <style lang='scss' scoped>
 @import "./style";

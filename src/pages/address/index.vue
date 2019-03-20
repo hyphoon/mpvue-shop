@@ -75,7 +75,7 @@ export default {
   components: {},
   methods: {
     initTextStyle() {
-      //滑动之前先初始化数据
+      // 滑动之前先初始化数据
       for (var i = 0; i < this.listData.length; i++) {
         this.listData[i].textStyle = "";
         this.listData[i].textStyle1 = "";
@@ -98,16 +98,17 @@ export default {
             }).then(() => {
               _this.getAddressList();
             });
+            console.log(data);
           } else if (res.cancel) {
             console.log("用户点击取消");
-            //滑动之前先初始化样式数据
+            // 滑动之前先初始化样式数据
             _this.initTextStyle();
           }
         }
       });
     },
     deleteGoods(e) {
-      //滑动之前先初始化样式数据
+      // 滑动之前先初始化样式数据
       this.initTextStyle();
       var index = e.currentTarget.dataset.index;
       console.log(this.X);
@@ -153,7 +154,7 @@ export default {
 
       // this.listData = this.listData;
       // transform:'translateX(' + tranX1 + 'rpx)'
-      //大于这个值认为在滑动
+      // 大于这个值认为在滑动
       // if (X > 10 || X < -10) {
 
       // }
@@ -215,16 +216,16 @@ export default {
       console.log(this.listData);
     },
     wxaddress(index) {
-      if (index == 1) {
+      if (index === 1) {
         wx.navigateTo({
           url: "/pages/addaddress/main"
         });
       } else {
         wx.chooseAddress({
           success: function(res) {
-            var res = encodeURIComponent(JSON.stringify(res));
+            var resEncode = encodeURIComponent(JSON.stringify(res));
             wx.navigateTo({
-              url: "/pages/addaddress/main?res=" + res
+              url: "/pages/addaddress/main?res=" + resEncode
             });
           }
         });

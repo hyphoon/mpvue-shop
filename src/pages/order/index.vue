@@ -70,8 +70,6 @@
 <script>
   import {
     get,
-    post,
-    login,
     getStorageOpenid
   } from "../../utils";
   export default {
@@ -98,10 +96,10 @@
     methods: {
       pay() {
         wx.showToast({
-          title: "支付功能暂未开发", //提示的内容,
-          icon: "none", //图标,
-          duration: 1500, //延迟时间,
-          mask: false, //显示透明蒙层，防止触摸穿透,
+          title: "支付功能暂未开发", // 提示的内容,
+          icon: "none", // 图标,
+          duration: 1500, // 延迟时间,
+          mask: false, // 显示透明蒙层，防止触摸穿透,
           success: res => {}
         });
       },
@@ -131,7 +129,6 @@
     },
     computed: {}
   };
-
 </script>
 <style lang='scss' scoped>
   @import "./style";

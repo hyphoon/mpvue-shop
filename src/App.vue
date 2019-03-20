@@ -30,7 +30,7 @@ export default {
     wx.setStorageSync("userInfo", userInfo);
     wx.setStorageSync("openId", openId);
     console.log("app created and cache logs by setStorageSync");
-    //获取openid
+    // 获取openid
 
     // if (!wx.getStorageSync('openid')) {
     //   getOpenid();

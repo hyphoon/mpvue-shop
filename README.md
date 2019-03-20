@@ -1,3 +1,14 @@
+# 感谢
+* 感谢 heyushuo 大神开发了这个项目（https://github.com/heyushuo/mpvue-shop）
+* 感谢 kivazqy 大神升级了版本 （https://github.com/kivazqy/yanxuan）， 本项目就是 fork 自该大神的版本
+
+# 主要修改
+* mpvue 升级到 2.0.5
+* 引入 eslint， 并修改源码中不满足 rule 的地方
+
+以下是原项目说明
+---
+
 ## 升级
 针对原库不支持新版mpvue的问题进行了配置升级，主要是增配fileExt，增加process.env.PLATFORM，package.json里也做了scripts的调整，以适应新版对平台小程序的扩展配置
 

@@ -87,7 +87,7 @@ export default {
       this.telNumber = detail.mobile;
       this.address = detail.address;
       this.detailadress = detail.address_detail;
-      this.checked = detail.is_default == 1 ? true : false;
+      this.checked = detail.is_default === 1;
     },
     checkboxChange(e) {
       this.checked = e.mp.detail.value[0];
@@ -114,13 +114,13 @@ export default {
       });
       if (data.data) {
         wx.showToast({
-          title: "添加成功", //提示的内容,
-          icon: "success", //图标,
-          duration: 2000, //延迟时间,
-          mask: true, //显示透明蒙层，防止触摸穿透,
+          title: "添加成功", // 提示的内容,
+          icon: "success", // 图标,
+          duration: 2000, // 延迟时间,
+          mask: true, // 显示透明蒙层，防止触摸穿透,
           success: res => {
             wx.navigateBack({
-              delta: 1 //返回的页面数，如果 delta 大于现有页面数，则返回到首页,
+              delta: 1 // 返回的页面数，如果 delta 大于现有页面数，则返回到首页,
             });
           }
         });
@@ -139,7 +139,6 @@ export default {
     }
   }
 };
-
 </script>
 
 <style lang='scss' scoped>

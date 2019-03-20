@@ -126,6 +126,7 @@ export default {
           // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
           var tempFilePaths = res.tempFilePaths;
           console.log(res.tempFilePaths);
+          console.log(tempFilePaths);
           _this.imgUrl = res.tempFilePaths;
         }
       });

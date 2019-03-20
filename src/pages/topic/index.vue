@@ -21,7 +21,7 @@ export default {
   onPullDownRefresh() {
     this.page = 1;
     this.getListData(true);
-    //刷新完成后关闭
+    // 刷新完成后关闭
     wx.stopPullDownRefresh();
   },
   onReachBottom() {
@@ -53,7 +53,7 @@ export default {
       if (first) {
         this.topicList = data.data;
       } else {
-        //上拉加载跟多
+        // 上拉加载跟多
         this.topicList = this.topicList.concat(data.data);
       }
     },

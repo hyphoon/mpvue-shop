@@ -38,9 +38,9 @@ import { get } from "../../utils";
 export default {
   created() {},
   mounted() {
-    //获取列表数据
+    // 获取列表数据
     this.getListData();
-    //获取默认右侧数据
+    // 获取默认右侧数据
     this.selectitem(this.id, this.nowIndex);
   },
   data() {

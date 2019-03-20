@@ -26,8 +26,8 @@
     methods: {
       doLogin() {
         wx.showLoading({
-          title: "登录中...", //提示的内容,
-          mask: true, //显示透明蒙层，防止触摸穿透,
+          title: "登录中...", // 提示的内容,
+          mask: true, // 显示透明蒙层，防止触摸穿透,
           success: res => {}
         });
         const session = qcloud.Session.get();
@@ -67,7 +67,6 @@
     },
     computed: {}
   };
-
 </script>
 <style lang='scss' scoped>
   @import "./style";

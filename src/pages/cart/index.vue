@@ -56,7 +56,6 @@
   import {
     get,
     post,
-    login,
     getStorageOpenid
   } from "../../utils";
   export default {
@@ -87,7 +86,7 @@
     components: {},
     methods: {
       initTextStyle() {
-        //滑动之前先初始化数据
+        // 滑动之前先初始化数据
         for (var i = 0; i < this.listData.length; i++) {
           this.listData[i].textStyle = "";
           this.listData[i].textStyle1 = "";
@@ -99,7 +98,7 @@
         this.startY = e.touches[0].pageY;
       },
       deleteGoods(e) {
-        //滑动之前先初始化样式数据
+        // 滑动之前先初始化样式数据
         this.initTextStyle();
         var index = e.currentTarget.dataset.index;
         console.log(index);
@@ -163,7 +162,7 @@
         }
       },
       async orderDown() {
-        if (this.Listids.length == 0) {
+        if (this.Listids.length === 0) {
           wx.showToast({
             title: "请选择商品",
             icon: "none",
@@ -198,16 +197,16 @@
           content: "是否要删除该商品",
           success: function (res) {
             if (res.confirm) {
-
               _this.Listids.splice(index, 1);
               const data = get("/cart/deleteAction", {
                 id: id
               }).then(() => {
                 _this.getListData();
               });
+              console.log(data);
             } else if (res.cancel) {
               console.log("用户点击取消");
-              //滑动之前先初始化样式数据
+              // 滑动之前先初始化样式数据
               _this.initTextStyle();
             }
           }
@@ -224,7 +223,7 @@
         this.listData = data.data;
       },
       allCheck() {
-        //先清空
+        // 先清空
         this.Listids = [];
         if (this.allcheck) {
           this.allcheck = false;
@@ -232,7 +231,7 @@
           console.log("选择全部");
 
           this.allcheck = true;
-          //循环遍历所有的商品id
+          // 循环遍历所有的商品id
           for (let i = 0; i < this.listData.length; i++) {
             const element = this.listData[i];
             this.Listids.push(element.goods_id);
@@ -256,7 +255,7 @@
             number++;
           }
         }
-        if (number == this.listData.length && number != 0) {
+        if (number === this.listData.length && number !== 0) {
           this.allcheck = true;
         } else {
           this.allcheck = false;
@@ -274,7 +273,6 @@
       }
     }
   };
-
 </script>
 <style lang='scss' scoped>
   @import "./style";

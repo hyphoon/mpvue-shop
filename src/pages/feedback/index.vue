@@ -22,15 +22,14 @@
 <script>
   import {
     post,
-    login,
+    login
   } from '../../utils'
   export default {
     mounted() {
-      //判断是否登录获取用户信息
+      // 判断是否登录获取用户信息
       if (login()) {
         this.userInfo = login();
         console.log(this.userInfo);
-
       }
     },
     data() {
@@ -53,22 +52,20 @@
         })
         if (data.data) {
           wx.showToast({
-            title: '提交成功', //提示的内容,
-            icon: 'none', //图标,
-            duration: 2000, //延迟时间,
-            mask: true, //显示透明蒙层，防止触摸穿透,
+            title: '提交成功', // 提示的内容,
+            icon: 'none', // 图标,
+            duration: 2000, // 延迟时间,
+            mask: true, // 显示透明蒙层，防止触摸穿透,
             success: res => {
               _this.content = '';
               _this.phone = '';
             }
           });
-
         }
-      },
+      }
     },
     computed: {}
   };
-
 </script>
 <style lang='scss' scoped>
   @import "./style";

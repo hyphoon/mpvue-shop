@@ -19,7 +19,6 @@
 
 <script>
   import {
-    get,
     toLogin,
     login
   } from "../../utils";
@@ -38,7 +37,6 @@
       return {
         avator: "http://yanxuan.nosdn.127.net/8945ae63d940cc42406c3f67019c5cb6.png",
         allcheck: false,
-        listData: [],
         Listids: [],
         userInfo: {},
         listData: [{
@@ -103,7 +101,6 @@
     },
     computed: {}
   };
-
 </script>
 <style lang='scss' scoped>
   @import "./style";

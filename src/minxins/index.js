@@ -49,7 +49,6 @@ MyPlugin.install = function (Vue) {
         pageDatas[this.$pageId()] = this.stashPageData()
 
         console.log(pageDatas);
-
       }
     },
 

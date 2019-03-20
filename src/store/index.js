@@ -19,10 +19,10 @@ const store = new Vuex.Store({
      * 这里设置一个统一的方法,大部分用的vuex都是简单的改变一些状态,不需要写过多的mutations
      * 使用方法 例:
      * this.$store.update({"cityName":"北京"})
-     * 
+     *
      *  config需要传入对象
-     * @param {*} state 
-     * @param {*Object} config 
+     * @param {*} state
+     * @param {*Object} config
      */
     update(state, config) {
       Object.keys(config).map((item, key) => {

@@ -29,7 +29,7 @@ import {
 export default {
   created() { },
   mounted() {
-    //获取页面传的参数
+    // 获取页面传的参数
     this.categoryId = this.$root.$mp.query.id;
     this.getAllData();
   },
@@ -52,7 +52,7 @@ export default {
       });
       this.goodsList = listdata.data;
       this.currentNav = listdata.currentNav;
-      //需要让导航滚动到可见区域
+      // 需要让导航滚动到可见区域
       if (this.nowIndex > 4) {
         this.scrollLeft = this.nowIndex * 60;
       }
@@ -65,12 +65,12 @@ export default {
       this.currentNav = navdata.currentNav;
       for (let i = 0; i < this.navData.length; i++) {
         const id = this.navData[i].id;
-        if (id == this.currentNav.id) {
+        if (id === this.currentNav.id) {
           this.nowIndex = i;
         }
       }
 
-      //需要让导航滚动到可见区域
+      // 需要让导航滚动到可见区域
       if (this.nowIndex > 4) {
         this.scrollLeft = this.nowIndex * 60;
       } else {
@@ -90,7 +90,6 @@ export default {
   },
   computed: {}
 };
-
 </script>
 <style lang='scss' scoped>
 @import "./style";

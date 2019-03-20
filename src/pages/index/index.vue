@@ -155,7 +155,7 @@ export default {
       // 可以通过 wx.getSetting 先查询一下用户是否授权了 "scope.record" 这个 scope
       wx.getSetting({
         success(res) {
-          //如果没有同意授权,打开设置
+          // 如果没有同意授权,打开设置
           if (!res.authSetting["scope.userLocation"]) {
             wx.openSetting({
               success: res => {
@@ -178,16 +178,16 @@ export default {
       });
       myAmapFun.getRegeo({
         success: function (data) {
-          //成功回调
+          // 成功回调
           console.log(data);
           // data[0].regeocodeData.formatted_address
           // _this.cityName = data[0].regeocodeData.formatted_address;
           _this.update({ cityName: data[0].regeocodeData.formatted_address });
         },
         fail: function (info) {
-          //失败回调
+          // 失败回调
           console.log(info);
-          //如果用户拒绝授权
+          // 如果用户拒绝授权
           // 默认为北京
           _this.cityName = "北京市";
           _this.update({ cityName: "北京市" });
@@ -220,7 +220,7 @@ export default {
       });
     },
     goodsList(info) {
-      if (info == "hot") {
+      if (info === "hot") {
         wx.navigateTo({
           url: "/pages/newgoods/main?isHot=" + 1
         });

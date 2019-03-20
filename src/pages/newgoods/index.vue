@@ -49,8 +49,8 @@ export default {
     },
     changeTab(index) {
       this.nowIndex = index;
-      if (index == 1) {
-        this.order = this.order == "asc" ? "desc" : "asc";
+      if (index === 1) {
+        this.order = this.order === "asc" ? "desc" : "asc";
       } else {
         this.order = "";
       }

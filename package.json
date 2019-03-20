@@ -5,15 +5,30 @@
   "author": "heyushuo <1007561607@qq.com>",
   "private": true,
   "scripts": {
+    "dev:wx": "node build/dev-server.js wx",
+    "start:wx": "npm run dev:wx",
+    "build:wx": "node build/build.js wx",
+    "dev:swan": "node build/dev-server.js swan",
+    "start:swan": "npm run dev:swan",
+    "build:swan": "node build/build.js swan",
+    "dev:tt": "node build/dev-server.js tt",
+    "start:tt": "npm run dev:tt",
+    "build:tt": "node build/build.js tt",
+    "dev:my": "node build/dev-server.js my",
+    "start:my": "npm run dev:my",
+    "build:my": "node build/build.js my",
     "dev": "node build/dev-server.js wx",
-    "start": "node build/dev-server.js wx",
-    "build": "node build/build.js wx"
+    "start": "npm run dev",
+    "build": "node build/build.js wx",
+    "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "mpvue": "^1.0.11",
+    "ajv": "^6.10.0",
+    "mpvue": "2.0.5",
     "mpvue-wxparse": "^0.6.4",
     "vuex": "^3.0.1",
-    "wafer2-client-sdk": "^2.1.0"
+    "wafer2-client-sdk": "^2.1.0",
+    "webpack-mpvue-vendor-plugin": "2.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -27,6 +42,16 @@
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
     "cssnano": "^3.10.0",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-html": "^4.0.3",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "babel-eslint": "^8.2.3",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -35,9 +60,9 @@
     "glob": "^7.1.2",
     "html-webpack-plugin": "^3.2.0",
     "http-proxy-middleware": "^0.18.0",
-    "mpvue-loader": "^1.1.2",
+    "mpvue-loader": "2.0.0",
+    "mpvue-template-compiler": "2.0.5",
     "mpvue-webpack-target": "^1.0.3",
-    "mpvue-template-compiler": "^1.0.11",
     "node-sass": "^4.9.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^2.0.0",
@@ -58,7 +83,7 @@
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware-hard-disk": "^1.12.0",
     "webpack-merge": "^4.1.0",
-    "webpack-mpvue-asset-plugin": "0.1.2"
+    "webpack-mpvue-asset-plugin": "2.0.0"
   },
   "engines": {
     "node": ">= 4.0.0",
